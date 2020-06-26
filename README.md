@@ -4,7 +4,7 @@ This project was developed for the course [Udacity Robotics Software Engineer Na
 
 <img src="robot.gif"/>
 
-Designed a simple robot with differential drive, lidar, and camera. Added nodes to process images from camera sensor and drive the robot to chase a spherical ball.
+Designed a simple robot with differential drive, lidar, and camera. Added nodes to process images from camera sensor and drive the robot to chase a white ball.
 
 ## Dependencies for Running Locally
 * cmake >= 3.7
@@ -15,7 +15,7 @@ Designed a simple robot with differential drive, lidar, and camera. Added nodes 
   * Windows: [Click here for installation instructions](http://gnuwin32.sourceforge.net/packages/make.htm)
 * gazebo
 
-## Basic Build Instructions
+## Build Instructions
 
 * Create a catkin_ws, feel free to skip if you already have one!
 
