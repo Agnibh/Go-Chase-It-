@@ -4,7 +4,7 @@ This project was developed for the course [Udacity Robotics Software Engineer Na
 
 <img src="robot.gif"/>
 
-Designed a simple robot with differential drive, lidar, and camera. Added nodes to process images from camera sensor and drive the robot to chase a spherical ball.
+Designed a simple robot with differential drive, lidar, and camera. Added nodes to process images from camera sensor and drive the robot to chase a white ball.
 
 ## Dependencies for Running Locally
 * cmake >= 3.7
@@ -15,40 +15,49 @@ Designed a simple robot with differential drive, lidar, and camera. Added nodes 
   * Windows: [Click here for installation instructions](http://gnuwin32.sourceforge.net/packages/make.htm)
 * gazebo
 
-## Basic Build Instructions
+## Build Instructions
 
-Create a catkin_ws, feel free to skip if you already have one!
-$ cd /home/workspace/
-$ mkdir -p /home/workspace/catkin_ws/src/
-$ cd catkin_ws/src/
-$ catkin_init_workspace
-$ cd ..
+* Create a catkin_ws, feel free to skip if you already have one!
 
-Clone the package in catkin_ws/src/
-$ cd /home/whttps://github.com/Agnibh/Go-Chase-It-.git
+     $ cd /home/workspace/
 
-Build the  package
-$ cd /home/workspace/catkin_ws/ 
-$ catkin_make
+     $ mkdir -p /home/workspace/catkin_ws/src/
 
-After building the package, source your environment
-$ cd /home/workspace/catkin_ws/
-$ source devel/setup.bash
+     $ cd catkin_ws/src/
 
-Once the package has been built, you can launch the simulation environment using
-$ roslaunch my_robot world.launch
+     $ catkin_init_workspace
 
-Interact with the robot using the ball_chaser
-Open a new terminal and type the following:
+     $ cd ..
 
-$ cd /home/workspace/catkin_ws/
-$ source devel/setup.bash
-$ roslaunch ball_chaser ball_chaser.launch
+* Clone the package in catkin_ws/src/
 
-How to view image stream from the camera?
-Camera image stream is published to the following topic:
+     $ cd /home/whttps://github.com/Agnibh/Go-Chase-It-.git
 
-/rgb_camera/image_raw
-This stream can be viewed by following command in separate terminal:
+* Build the  package
 
-$ rosrun image_view image_view image:=/rgb_camera/image_raw
+     $ cd /home/workspace/catkin_ws/ 
+
+     $ catkin_make
+
+* After building the package, source your environment
+
+     $ cd /home/workspace/catkin_ws/
+
+     $ source devel/setup.bash
+
+* Once the package has been built, you can launch the simulation environment using
+
+     $ roslaunch my_robot world.launch
+
+* Interact with the robot using the ball_chaser. Open a new terminal and type the following:
+
+     $ cd /home/workspace/catkin_ws/
+
+     $ source devel/setup.bash
+
+     $ roslaunch ball_chaser ball_chaser.launch
+
+* How to view image stream from the camera? Camera image stream is published to the following topic: /rgb_camera/image_raw
+  This stream can be viewed by following command in separate terminal:
+
+     $ rosrun image_view image_view image:=/rgb_camera/image_raw
