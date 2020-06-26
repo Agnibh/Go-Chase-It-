@@ -31,14 +31,17 @@ void process_image_callback(const sensor_msgs::Image img)
     // Request a stop when there's no white ball seen by the camera
     bool ball_present = false;
     int pos = 0;
+    int j = 0;
 
     // Loop through each pixel in the image and check if its equal to the white pixel
-    for (int i = 0; i < img.height*img.step; i++) {
-		if (img.data[i] == white_pixel) {
+    for (int i = 0; i < img.height*img.width; i++) {
+		if (img.data[j] == white_pixel && img.data[j+1] == white_pixel && img.data[j+2] == white_pixel) {
 		    ball_present = true;
-                    pos=(i%img.step)/(img.step/img.width);
+                    pos=(j%img.step)/(img.step/img.width);
 		    break;
-		}   
+		} 
+		else
+		    j+=3;  
     }
 
     // If ball is present then move the robot to the ball depending on where it lies
@@ -46,11 +49,11 @@ void process_image_callback(const sensor_msgs::Image img)
        // Turn the robot left
        if(pos<img.width/3)
             drive_robot(0,0.1);
-       else if(pos>= img.width/3 && pos<=2*img.width/3)
        // Move the robot forward
+       else if(pos>= img.width/3&& pos<=2*img.width/3)
 	    drive_robot(0.5,0);
-       else
        // Turn the robot right
+       else
             drive_robot(0,-0.1);
     }
     else

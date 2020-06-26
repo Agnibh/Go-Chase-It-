@@ -23,7 +23,7 @@ bool handle_drive_request(ball_chaser::DriveToTarget::Request& req,
     motor_command_publisher.publish(motor_command);
 
     // Wait 3 seconds for arm to settle
-    ros::Duration(1).sleep();
+    //ros::Duration(1).sleep();
 
     // Return a response message
     res.msg_feedback = "Move by x: " + std::to_string(req.linear_x) + " , Rotate by z: " + std::to_string(req.angular_z);
