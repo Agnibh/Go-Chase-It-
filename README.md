@@ -49,7 +49,7 @@ Designed a simple robot with differential drive, lidar, and camera. Added nodes 
 
      $ roslaunch my_robot world.launch
 
-*Interact with the robot using the ball_chaser. Open a new terminal and type the following:
+* Interact with the robot using the ball_chaser. Open a new terminal and type the following:
 
      $ cd /home/workspace/catkin_ws/
 
